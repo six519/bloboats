@@ -1,0 +1,26 @@
+Source: bloboats
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>
+Build-Depends: debhelper (>= 5.0.0)
+Standards-Version: 3.7.2
+
+Package: bloboats
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a boat racing game
+ Bloboats is an arcade-like boat racing game in the hybrid spirit of 
+ Mario-like platform jumpers and elasto mania / xmoto.
+ .    
+ The objective of Bloboats is to reach MS Enterprise as fast as possible to
+ save if from the hands of the terrible Tentacle Monsters of an Unknown Master
+ and the same time beat your friend and laugh at his or her puny time.
+ . 
+ The journey starts from a place called Tutorial, somewhere in the United
+ States, and somehow the player ends up in the famous HV-Arena of Helsinki.
+ During the trip a number of MS Enterprises are saved, luckily, from the
+ hands of the terrible Tentacle Monsters of an Unknown Master, who actually
+ is your dad. Or then ain't. :-)
+ .
+  Homepage: http://bloboats.dy.fi/about.php
