@@ -1,6 +1,6 @@
 bloboats (1.0.1-1) unstable; urgency=low
 
-  * Initial release
+  * Initial release (Closes: #383945)
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Thu, 17 Aug 2006 20:12:08 +0200
 
