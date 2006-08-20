@@ -14,7 +14,7 @@ build-stamp:
 clean:
 	dh_testdir
 	# first make clean failes
-	-make clean
+	- make clean
 	QUILT_PATCHES=debian/patches quilt pop -a -R || test $$? = 2
 	rm -f debian/bloboats.6
 	dh_clean
