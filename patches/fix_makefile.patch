@@ -27,21 +27,6 @@ Index: bloboats-1.0.1/Makefile
  
  PRIVATEDIR = ~/.bloboats
  
-@@ -27,10 +29,10 @@
- # SDL, SDL_image, SDL_mixer and SDL_net to compile. Libvorbis for music support.
- # OpenGL support.
- 
--SOUND = 1
--NETWORK = 1
--MUSIC = 1
--DEBUG = 0
-+SOUND ?= 1
-+NETWORK ?= 1
-+MUSIC ?= 1
-+DEBUG ?= 0
- 
- # Select target system
- # Possible targets: DEFAULT (Linux and most of others too)
 @@ -41,7 +43,7 @@
  
  
