@@ -2,6 +2,7 @@ bloboats (1.0.1.dsfg-1) unstable; urgency=low
 
   * Initial release (Closes: #383945)
   * dfsg: sound files removed
+   - README.Debian created to explain the issue.
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Fri, 22 Sep 2006 14:37:08 +0200
 
