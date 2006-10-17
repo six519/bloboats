@@ -35,7 +35,7 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs
-	dh_installdocs INTRO.xt  readme.txt debian/README.Debian
+	dh_installdocs INTRO.txt  readme.txt debian/README.Debian
 	dh_installman debian/bloboats.6
 	dh_installmenu
 	dh_link
