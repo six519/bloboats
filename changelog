@@ -1,8 +1,13 @@
 bloboats (1.0.1.dsfg-1) unstable; urgency=low
 
+  [ Gonéri Le Bouder ]
   * Initial release (Closes: #383945)
   * dfsg: sound files removed
    - README.Debian created to explain the issue.
 
- -- Gonéri Le Bouder <goneri@rulezlan.org>  Fri, 22 Sep 2006 14:37:08 +0200
+  [ Jon Dowland ]
+  * update menu section to "Games/Action" for menu transition
+    (thanks Linas Žvirblis)
+
+ -- Jon Dowland <jon@alcopop.org>  Thu, 12 Jul 2007 11:23:53 +0100
 
