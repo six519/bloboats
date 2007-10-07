@@ -28,6 +28,8 @@ install: build
 	# xpm
 	mkdir -p debian/bloboats/usr/share/pixmaps
 	cp debian/bloboats.xpm debian/bloboats/usr/share/pixmaps
+	# desktop
+	mkdir -p debian/bloboats/usr/share/applications
 
 binary-indep: build install
 
@@ -38,6 +40,7 @@ binary-arch: build install
 	dh_installdocs INTRO.txt  readme.txt debian/README.Debian
 	dh_installman debian/bloboats.6
 	dh_installmenu
+	dh_desktop
 	dh_link
 	dh_strip
 	dh_compress
