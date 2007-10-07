@@ -1,3 +1,11 @@
+bloboats (1.0.1.dsfg-2) unstable; urgency=low
+
+  [ William Lima ]
+  * Add call to dh_desktop to debian/rules
+  * Add .desktop file
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 07 Oct 2007 15:00:45 +0200
+
 bloboats (1.0.1.dsfg-1) unstable; urgency=low
 
   [ Gonéri Le Bouder ]
