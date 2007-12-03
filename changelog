@@ -4,7 +4,10 @@ bloboats (1.0.1.dsfg-2) unstable; urgency=low
   * Add call to dh_desktop to debian/rules
   * Add .desktop file
 
- -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 07 Oct 2007 15:00:45 +0200
+  [ Jon Dowland ]
+  * add Homepage: control field to source stanza
+
+ -- Jon Dowland <jon@alcopop.org>  Mon, 03 Dec 2007 17:47:27 +0000
 
 bloboats (1.0.1.dsfg-1) unstable; urgency=low
 
