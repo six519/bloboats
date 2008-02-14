@@ -1,7 +1,7 @@
-Index: bloboats-1.0.1/Makefile
+Index: bloboats-1.0.1.dfsg/Makefile
 ===================================================================
---- bloboats-1.0.1.orig/Makefile	2006-08-20 21:23:06.000000000 +0200
-+++ bloboats-1.0.1/Makefile	2006-08-20 21:43:35.000000000 +0200
+--- bloboats-1.0.1.dfsg.orig/Makefile	2006-09-22 08:27:17.000000000 -0400
++++ bloboats-1.0.1.dfsg/Makefile	2008-02-14 15:01:13.000000000 -0500
 @@ -7,17 +7,19 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -36,7 +36,7 @@ Index: bloboats-1.0.1/Makefile
  
  
  ### Only some random settings below
-@@ -133,17 +135,20 @@
+@@ -133,17 +135,18 @@
  CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_ = $(CXXFLAGS_$(TARGET)_)
  
@@ -47,19 +47,19 @@ Index: bloboats-1.0.1/Makefile
 +build-stamp: build
 +build: config-stamp $(OBJ)
  	$(CXX) $(OBJ) $(LIBS) $(CXXFLAGS)
- 	$(STRIP) bin/$(BINARY)
+-	$(STRIP) bin/$(BINARY)
 +	touch build-stamp
  
  icon:
  	$(ICON_CMD)
  	$(CXX) -o bin/$(BINARY) $(OBJ) $(ICON) $(LIBS)
- 	$(STRIP) bin/$(BINARY)
+-	$(STRIP) bin/$(BINARY)
  
 +config-stamp: config
  config:
  	echo "datadir $(DATADIR)" >bloboats.dirs
  	echo "privatedir $(PRIVATEDIR)" >>bloboats.dirs
-@@ -153,16 +158,16 @@
+@@ -153,16 +156,16 @@
  	echo "#define NETWORK $(NETWORK)" >> src/compiling_settings.h
  	echo "#define MUSIC $(MUSIC)" >> src/compiling_settings.h
  	echo "#define DEBUG $(DEBUG)" >> src/compiling_settings.h
@@ -85,8 +85,11 @@ Index: bloboats-1.0.1/Makefile
  
  uninstall:
  	rm -f $(CONFIGDIR)/bloboats.dirs
-@@ -177,7 +182,8 @@
- 	$(STRIP) bin/$(BINARY_)
+@@ -174,10 +177,10 @@
+ 
+ gho: src/viewport.o
+ 	$(CXX) src/viewport.o $(LIBS) $(CXXFLAGS_)
+-	$(STRIP) bin/$(BINARY_)
  
  clean:
 -	rm bloboats.dirs

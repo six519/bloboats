@@ -30,6 +30,7 @@ install: build
 	cp debian/bloboats.xpm debian/bloboats/usr/share/pixmaps
 	# desktop
 	mkdir -p debian/bloboats/usr/share/applications
+	cp debian/bloboats.desktop debian/bloboats/usr/share/applications
 
 binary-indep: build install
 

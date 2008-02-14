@@ -1,4 +1,4 @@
-bloboats (1.0.1.dsfg-2) unstable; urgency=low
+bloboats (1.0.1.dsfg-2) UNRELEASED; urgency=low
 
   [ William Lima ]
   * Add call to dh_desktop to debian/rules
@@ -6,6 +6,13 @@ bloboats (1.0.1.dsfg-2) unstable; urgency=low
 
   [ Jon Dowland ]
   * add Homepage: control field to source stanza
+
+  [ Barry deFreese ]
+  * Update fix_makefile.patch to remove strip. (Closes: #436595).
+  * Remove Homepage from package description.
+  * Add VCS tags in control.
+  * Bump Standards Version to 3.7.3. (No changes needed).
+  * Add myself to uploaders.
 
  -- Jon Dowland <jon@alcopop.org>  Mon, 03 Dec 2007 17:47:27 +0000
 
