@@ -1,7 +1,7 @@
-Index: bloboats-1.0.1.dfsg/Makefile
+Index: bloboats-1.0.1.dsfg/Makefile
 ===================================================================
---- bloboats-1.0.1.dfsg.orig/Makefile	2006-09-22 08:27:17.000000000 -0400
-+++ bloboats-1.0.1.dfsg/Makefile	2008-02-14 15:01:13.000000000 -0500
+--- bloboats-1.0.1.dsfg.orig/Makefile	2006-09-22 12:27:17.000000000 +0000
++++ bloboats-1.0.1.dsfg/Makefile	2008-02-20 16:37:07.000000000 +0000
 @@ -7,17 +7,19 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -27,6 +27,18 @@ Index: bloboats-1.0.1.dfsg/Makefile
  
  PRIVATEDIR = ~/.bloboats
  
+@@ -27,9 +29,9 @@
+ # SDL, SDL_image, SDL_mixer and SDL_net to compile. Libvorbis for music support.
+ # OpenGL support.
+ 
+-SOUND = 0
++SOUND = 1
+ NETWORK = 1
+-MUSIC = 0
++MUSIC = 1
+ DEBUG = 0
+ 
+ # Select target system
 @@ -41,7 +43,7 @@
  
  
