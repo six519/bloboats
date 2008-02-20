@@ -1,4 +1,4 @@
-bloboats (1.0.1.dsfg-2) UNRELEASED; urgency=low
+bloboats (1.0.1.dsfg-2) unstable; urgency=low
 
   [ William Lima ]
   * Add call to dh_desktop to debian/rules
@@ -17,7 +17,10 @@ bloboats (1.0.1.dsfg-2) UNRELEASED; urgency=low
   [ Ansgar Burchardt ]
   * Add Icon to .desktop file
 
- -- Ansgar Burchardt <ansgar@43-1.org>  Sun, 17 Feb 2008 21:10:31 +0100
+  [ Gonéri Le Bouder ]
+  * update fix_makefile.patch to turn on the sound effects
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Wed, 20 Feb 2008 16:38:06 +0000
 
 bloboats (1.0.1.dsfg-1) unstable; urgency=low
 
