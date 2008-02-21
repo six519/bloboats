@@ -1,7 +1,7 @@
 Index: bloboats-1.0.1.dsfg/Makefile
 ===================================================================
---- bloboats-1.0.1.dsfg.orig/Makefile	2006-09-22 12:27:17.000000000 +0000
-+++ bloboats-1.0.1.dsfg/Makefile	2008-02-20 16:37:07.000000000 +0000
+--- bloboats-1.0.1.dsfg.orig/Makefile	2008-02-21 17:22:58.000000000 +0100
++++ bloboats-1.0.1.dsfg/Makefile	2008-02-21 17:24:02.000000000 +0100
 @@ -7,17 +7,19 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -27,19 +27,16 @@ Index: bloboats-1.0.1.dsfg/Makefile
  
  PRIVATEDIR = ~/.bloboats
  
-@@ -27,9 +29,9 @@
+@@ -27,6 +29,8 @@
  # SDL, SDL_image, SDL_mixer and SDL_net to compile. Libvorbis for music support.
  # OpenGL support.
  
--SOUND = 0
-+SOUND = 1
++# since the sound files were removed from the tarball (see: README.Debian), we
++# turn off the sound support
+ SOUND = 0
  NETWORK = 1
--MUSIC = 0
-+MUSIC = 1
- DEBUG = 0
- 
- # Select target system
-@@ -41,7 +43,7 @@
+ MUSIC = 0
+@@ -41,7 +45,7 @@
  
  
  #This should probably be DEFAULT
@@ -48,7 +45,18 @@ Index: bloboats-1.0.1.dsfg/Makefile
  
  
  ### Only some random settings below
-@@ -133,17 +135,18 @@
+@@ -73,7 +77,9 @@
+ SDLCONFIG = $(SDLCONFIG_$(TARGET))
+ 
+ ### Libs
+-LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
++#LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
++# No sound enable => no SDL_mixer
++LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_net -lGL -lGLU
+ LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L/usr/X11R6/lib -lGL -lGLU
+ LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU -L/usr/pkg/lib
+ LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -framework OpenGL
+@@ -133,17 +139,18 @@
  CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_ = $(CXXFLAGS_$(TARGET)_)
  
@@ -71,7 +79,7 @@ Index: bloboats-1.0.1.dsfg/Makefile
  config:
  	echo "datadir $(DATADIR)" >bloboats.dirs
  	echo "privatedir $(PRIVATEDIR)" >>bloboats.dirs
-@@ -153,16 +156,16 @@
+@@ -153,16 +160,16 @@
  	echo "#define NETWORK $(NETWORK)" >> src/compiling_settings.h
  	echo "#define MUSIC $(MUSIC)" >> src/compiling_settings.h
  	echo "#define DEBUG $(DEBUG)" >> src/compiling_settings.h
@@ -97,7 +105,7 @@ Index: bloboats-1.0.1.dsfg/Makefile
  
  uninstall:
  	rm -f $(CONFIGDIR)/bloboats.dirs
-@@ -174,10 +177,10 @@
+@@ -174,10 +181,10 @@
  
  gho: src/viewport.o
  	$(CXX) src/viewport.o $(LIBS) $(CXXFLAGS_)
