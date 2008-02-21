@@ -18,7 +18,8 @@ bloboats (1.0.1.dsfg-2) unstable; urgency=low
   * Add Icon to .desktop file
 
   [ Gonéri Le Bouder ]
-  * update fix_makefile.patch to turn on the sound effects
+  * remove libsdl-mixer1.2-dev since it's not needed for the moment
+  * do not link with sdl-mixer too (fix_makefile.patch updated)
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Wed, 20 Feb 2008 16:38:06 +0000
 
