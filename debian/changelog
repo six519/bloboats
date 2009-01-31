@@ -1,3 +1,9 @@
+bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
+
+  * Add a watch file explaining the redirector issue
+
+ -- Paul Wise <pabs@debian.org>  Sat, 31 Jan 2009 19:03:27 +0900
+
 bloboats (1.0.1.dsfg-2) unstable; urgency=low
 
   [ William Lima ]

@@ -1,0 +1,7 @@
+# Upstream uses a download redirector that doesn't work with uscan
+#
+# http://bloboats.dy.fi/download.php
+# http://bloboats.dy.fi/download.php?from=kapsi.fi&type=tar.gz
+#  http://mirror.kapsi.fi/bloboats.dy.fi/bloboats-1.0.1.tar.gz
+# http://bloboats.dy.fi/download.php?from=mbnet.fi&type=tar.gz
+#  http://koti.mbnet.fi/makegho/c/blobtrox/bloboats-1.0.1.tar.gz
