@@ -1,2 +1,2 @@
 version=3
-opts="dversionmangle=s/\.dsfg//" http://bloboats.dy.fi/download.php .*/bloboats-([0-9.]+)\.tar\.gz
+opts="dversionmangle=s/\.dsfg//" http://bloboats.blobtrox.net/download.php .*/bloboats-([0-9.]+)\.tar\.gz
