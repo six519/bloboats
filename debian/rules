@@ -1,21 +1,19 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 #export DH_VERBOSE=1
-
+include /usr/share/quilt/quilt.make
 
 build: build-stamp
-build-stamp:
+build-stamp: $(QUILT_STAMPFN)
 	dh_testdir
-	QUILT_PATCHES=debian/patches quilt push -a || test $$? = 2
 	make DATADIR=/usr/share/games/bloboats
 	docbook-to-man debian/bloboats.sgml > debian/bloboats.6
 	touch build-stamp
 
-clean:
+clean: unpatch
 	dh_testdir
 	# first make clean failes
 	- make clean
-	QUILT_PATCHES=debian/patches quilt pop -a -R || test $$? = 2
 	rm -f debian/bloboats.6
 	dh_clean
 

@@ -1,9 +1,14 @@
 bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
 
+  [ Paul Wise ]
   * Add a watch file
   * Update upstream URLs
 
- -- Paul Wise <pabs@debian.org>  Sat, 31 Jan 2009 19:03:27 +0900
+  [ Gonéri Le Bouder ]
+  * Use /usr/share/quilt/quilt.make to call quilt
+  * Unapply the patches during the clean, thanks Raphael Geisser
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sat, 18 Apr 2009 23:48:41 +0200
 
 bloboats (1.0.1.dsfg-2) unstable; urgency=low
 
