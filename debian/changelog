@@ -7,7 +7,8 @@ bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
   [ Gonéri Le Bouder ]
   * Use /usr/share/quilt/quilt.make to call quilt
   * Unapply the patches during the clean, thanks Raphael Geisser
-  * Standard version 3.8.1, no change 
+  * Standard version 3.8.1
+   - do not ignore 'make clean' return 
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 19 Apr 2009 00:00:15 +0200
 
