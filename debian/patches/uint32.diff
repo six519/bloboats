@@ -1,0 +1,39 @@
+Subject: Bug#523271: bloboats: segfault at start up
+From: Raphael Geissert <atomo64@gmail.com>
+
+
+Index: bloboats-1.0.1.dsfg/src/window.cpp
+===================================================================
+--- bloboats-1.0.1.dsfg.orig/src/window.cpp
++++ bloboats-1.0.1.dsfg/src/window.cpp
+@@ -36,7 +36,7 @@ window::~window(){}
+ 
+ 
+ 
+-SDL_Surface * window::OpenWindow(int w, int h, int b, int flags) {
++SDL_Surface * window::OpenWindow(int w, int h, int b, Uint32 flags) {
+ 	if (!flags) {
+ 		flags = oldflags^SDL_FULLSCREEN;
+ 	}
+Index: bloboats-1.0.1.dsfg/src/window.h
+===================================================================
+--- bloboats-1.0.1.dsfg.orig/src/window.h
++++ bloboats-1.0.1.dsfg/src/window.h
+@@ -31,7 +31,7 @@ class window
+ 		window();
+ 		~window();
+ 
+-		SDL_Surface * OpenWindow(int width, int height, int bpp, int flags);
++		SDL_Surface * OpenWindow(int width, int height, int bpp, Uint32 flags);
+ 		void SetTitle(char *text, char *icon);
+ 		bool Iconify();
+ 
+@@ -52,7 +52,7 @@ class window
+ 
+ 		int xlast, ylast;
+ 
+-		int oldflags;
++		Uint32 oldflags;
+ 
+ 	private:
+ 		SDL_Surface *screen;

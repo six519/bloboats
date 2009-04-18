@@ -8,7 +8,9 @@ bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
   * Use /usr/share/quilt/quilt.make to call quilt
   * Unapply the patches during the clean, thanks Raphael Geisser
   * Standard version 3.8.1
-   - do not ignore 'make clean' return 
+   - do not ignore 'make clean' return
+  * deals correctly with noopt and debug, thanks Raphael Geisser
+  * Apply Raphael Geisser patch to pass correct parameter to SDL_SetVideoMode
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 19 Apr 2009 00:00:15 +0200
 
