@@ -1,0 +1,39 @@
+--- bloboats-1.0.1.dsfg.orig/src/main.cpp
++++ bloboats-1.0.1.dsfg/src/main.cpp
+@@ -197,7 +197,7 @@
+ 
+ 	if (Config.fullscreen) flags |= SDL_FULLSCREEN;
+ 
+-	SDL_Surface *s;
++	SDL_Surface *s = NULL;
+ 
+ 	if (!manualres) {
+ 		switch(Config.resolution) {
+@@ -217,9 +217,13 @@
+ 				s = Window.OpenWindow(1280, 1024, 32, flags);
+ 			break;
+ 			default:
+-				s = Window.OpenWindow(640, 480, 32, flags);
++				// Do nothing
+ 			break;
+ 		}
++
++		if (!s)
++			s = Window.OpenWindow(640, 480, 32, flags);
++
+ 	} else {
+ 		s = Window.OpenWindow(reswidth, resheight, 32, flags);
+ 	}
+--- bloboats-1.0.1.dsfg.orig/src/window.cpp
++++ bloboats-1.0.1.dsfg/src/window.cpp
+@@ -53,6 +53,10 @@
+ 
+ 
+ 	screen = SDL_SetVideoMode(width, height, bpp, flags);
++
++	if (!screen)
++		return NULL;
++
+ 	SDL_EventState(SDL_VIDEOEXPOSE, SDL_ENABLE);
+ 
+ 	// Set viewport

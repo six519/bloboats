@@ -1,2 +1,3 @@
+fix_segfault_notebook.diff
 fix_makefile.patch
 uint32.diff

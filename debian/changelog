@@ -1,4 +1,4 @@
-bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
+bloboats (1.0.1.dsfg-3) unstable; urgency=low
 
   [ Paul Wise ]
   * Add a watch file
@@ -11,6 +11,9 @@ bloboats (1.0.1.dsfg-3) UNRELEASED; urgency=low
    - do not ignore 'make clean' return
   * deals correctly with noopt and debug, thanks Raphael Geisser
   * Apply Raphael Geisser patch to pass correct parameter to SDL_SetVideoMode
+  * Add fix_segfault_notebook.diff to avoid a segfault if the screen
+    doesn't accept 1024x768 like most of the notebook computer
+    (Closes: #523271)
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 19 Apr 2009 00:00:15 +0200
 
