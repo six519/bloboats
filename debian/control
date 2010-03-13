@@ -2,7 +2,7 @@ Source: bloboats
 Section: games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Barry deFreese <bddebian@comcast.net>
+Uploaders: Barry deFreese <bddebian@comcast.net>
 Build-Depends: debhelper (>= 5.0.0), libglib2.0-dev, libsdl-image1.2-dev, libsdl-net1.2-dev, quilt, docbook-to-man
 Standards-Version: 3.8.1
 Homepage: http://bloboats.blobtrox.net/about.php
