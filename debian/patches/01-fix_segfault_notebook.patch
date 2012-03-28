@@ -1,0 +1,33 @@
+Description: Add fix_segfault_notebook.diff to avoid a segfault if the screen
+ doesn't accept 1024x768 like most of the notebook computer
+Author: Gonéri Le Bouder <goneri@rulezlan.org>
+Bug-Debian: http://bugs.debian.org/523271
+
+Index: bloboats-1.0.2.dsfg/src/main.cpp
+===================================================================
+--- bloboats-1.0.2.dsfg.orig/src/main.cpp	2010-11-24 01:23:12.000000000 +0700
++++ bloboats-1.0.2.dsfg/src/main.cpp	2012-03-06 20:05:58.595691437 +0700
+@@ -184,7 +184,7 @@
+ 
+ 	if (Config.fullscreen) flags |= SDL_FULLSCREEN;
+ 
+-	SDL_Surface *s;
++	SDL_Surface *s = NULL;
+ 
+ 	if (!manualres) {
+ 	    s = Window.OpenWindow(Config.reswidth, Config.resheight, 32, flags);
+Index: bloboats-1.0.2.dsfg/src/window.cpp
+===================================================================
+--- bloboats-1.0.2.dsfg.orig/src/window.cpp	2010-08-26 03:07:46.000000000 +0700
++++ bloboats-1.0.2.dsfg/src/window.cpp	2012-03-06 20:07:28.924139344 +0700
+@@ -53,6 +53,10 @@
+ 
+ 
+ 	screen = SDL_SetVideoMode(width, height, bpp, flags);
++
++	if (!screen)
++		return NULL;
++
+ 	SDL_EventState(SDL_VIDEOEXPOSE, SDL_ENABLE);
+ 
+ 	// Set viewport

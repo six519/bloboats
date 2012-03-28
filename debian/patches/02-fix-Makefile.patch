@@ -1,8 +1,8 @@
-Index: bloboats-1.0.1.dsfg/Makefile
+Index: bloboats-1.0.2.dsfg/Makefile
 ===================================================================
---- bloboats-1.0.1.dsfg.orig/Makefile	2008-02-21 17:22:58.000000000 +0100
-+++ bloboats-1.0.1.dsfg/Makefile	2008-02-21 17:24:02.000000000 +0100
-@@ -7,17 +7,19 @@
+--- bloboats-1.0.2.dsfg.orig/Makefile	2010-11-24 02:27:16.000000000 +0700
++++ bloboats-1.0.2.dsfg/Makefile	2012-03-07 12:16:59.543928783 +0700
+@@ -7,17 +7,21 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
  # for example, otherwise /. Don't use ~ or other environment variables!
@@ -15,28 +15,32 @@ Index: bloboats-1.0.1.dsfg/Makefile
  ### Or if you don't want to run make install at all, uncomments the next line
  # and comment the line below. Compile and run with './bin/bloboats'
  #DATADIR = data
--
+ 
 -DATADIR = $(PREFIX)/usr/games/bloboats/data
 +DATADIR ?= $(PREFIX)/usr/games/bloboats/data
  
  ### If you do make install, you may perhaps want to set these
 -BINARYDIR = $(PREFIX)/usr/bin
 -CONFIGDIR = $(PREFIX)/etc
++
 +BINARYDIR ?= $(PREFIX)/usr/bin
 +CONFIGDIR ?= $(PREFIX)/etc
  
  PRIVATEDIR = ~/.bloboats
  
-@@ -27,6 +29,8 @@
- # SDL, SDL_image, SDL_mixer and SDL_net to compile. Libvorbis for music support.
+@@ -27,7 +31,10 @@
+ # SDL, SDL_image, SDL_mixer to compile. Libvorbis for music support.
  # OpenGL support.
  
+-SOUND = 1
 +# since the sound files were removed from the tarball (see: README.Debian), we
 +# turn off the sound support
- SOUND = 0
- NETWORK = 1
- MUSIC = 0
-@@ -41,7 +45,7 @@
++
++SOUND = 0
+ MUSIC = 1
+ DEBUG = 0
+ 
+@@ -40,7 +47,7 @@
  
  
  #This should probably be DEFAULT
@@ -45,18 +49,17 @@ Index: bloboats-1.0.1.dsfg/Makefile
  
  
  ### Only some random settings below
-@@ -73,7 +77,9 @@
+@@ -72,7 +79,8 @@
  SDLCONFIG = $(SDLCONFIG_$(TARGET))
  
  ### Libs
--LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
-+#LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
-+# No sound enable => no SDL_mixer
-+LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_net -lGL -lGLU
- LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L/usr/X11R6/lib -lGL -lGLU
- LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU -L/usr/pkg/lib
- LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -framework OpenGL
-@@ -133,17 +139,18 @@
+-LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
++# no sound enable => no SDL_Mixer
++LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lGL -lGLU
+ LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -L/usr/X11R6/lib -lGL -lGLU
+ LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -L/usr/pkg/lib
+ LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -framework OpenGL
+@@ -132,18 +140,22 @@
  CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_ = $(CXXFLAGS_$(TARGET)_)
  
@@ -64,23 +67,27 @@ Index: bloboats-1.0.1.dsfg/Makefile
 +all: config-stamp build-stamp
  
 -main: $(OBJ)
++#main: $(OBJ)
 +build-stamp: build
 +build: config-stamp $(OBJ)
+ 	mkdir -p bin
  	$(CXX) $(OBJ) $(LIBS) $(CXXFLAGS)
 -	$(STRIP) bin/$(BINARY)
 +	touch build-stamp
++	#$(STRIP) bin/$(BINARY)
  
  icon:
  	$(ICON_CMD)
  	$(CXX) -o bin/$(BINARY) $(OBJ) $(ICON) $(LIBS)
 -	$(STRIP) bin/$(BINARY)
++	#$(STRIP) bin/$(BINARY)
  
 +config-stamp: config
  config:
  	echo "datadir $(DATADIR)" >bloboats.dirs
  	echo "privatedir $(PRIVATEDIR)" >>bloboats.dirs
-@@ -153,16 +160,16 @@
- 	echo "#define NETWORK $(NETWORK)" >> src/compiling_settings.h
+@@ -152,16 +164,16 @@
+ 	echo "#define SOUND $(SOUND)" >> src/compiling_settings.h
  	echo "#define MUSIC $(MUSIC)" >> src/compiling_settings.h
  	echo "#define DEBUG $(DEBUG)" >> src/compiling_settings.h
 +	touch config-stamp
@@ -105,11 +112,12 @@ Index: bloboats-1.0.1.dsfg/Makefile
  
  uninstall:
  	rm -f $(CONFIGDIR)/bloboats.dirs
-@@ -174,10 +181,10 @@
+@@ -173,10 +185,11 @@
  
  gho: src/viewport.o
  	$(CXX) src/viewport.o $(LIBS) $(CXXFLAGS_)
 -	$(STRIP) bin/$(BINARY_)
++	#$(STRIP) bin/$(BINARY_)
  
  clean:
 -	rm bloboats.dirs
