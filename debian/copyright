@@ -1,24 +1,30 @@
-This package was debianized by Gonéri Le Bouder <goneri@rulezlan.org> on
-Sun, 20 Aug 2006 21:33:20 +0200.
+Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=275
+Upstream-Name: bloboats
+Upstream-Contact:  Markus Kettunen <makegho@blobtrox.net>
+Source: http://bloboats.dy.fi/
 
- Copyright (C) 2006  Markus Kettunen
+Files: *
+Copyright: 2006-2012 Markus Kettunen
+License: GPL-2+
 
- This license holds for the program itself: the source code
- and the data files except some of the sounds files.
+Files: debian/*
+Copyright: 2012, Mahyuddin Susanto <udienz@ubuntu.com>
+           2006, GonÃ©ri Le Bouder <goneri@rulezlan.org>
+License: GPL-2+
 
- This program is free software; you can redistribute it and/or modify
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
+ .
+ This package is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-On Debian systems, the complete text of the GNU General
-Public License can be found in `/usr/share/common-licenses/GPL'.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
