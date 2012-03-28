@@ -1,3 +1,14 @@
+bloboats (1.0.2.dfsg-1) UNRELEASED; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * Refreshed all patches:
+    - debian/patches/01-fix_segfault_notebook.patch 
+    - debian/patches/02-fix-Makefile.patch
+    - debian/patches/03-uint32.patch
+
+ -- Mahyuddin Susanto <udienz@ubuntu.com>  Tue, 27 Mar 2012 17:10:47 +0700
+
 bloboats (1.0.1.dsfg-3) unstable; urgency=low
 
   [ Paul Wise ]
