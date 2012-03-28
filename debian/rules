@@ -1,38 +1,26 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-#export DH_VERBOSE=1
-include /usr/share/quilt/quilt.make
-
-CFLAGS = -Wall -g
-
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-
-ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -g
-endif
+export DH_VERBOSE=1
+#include /usr/share/quilt/quilt.make
 
 
-build: build-stamp
-build-stamp: $(QUILT_STAMPFN)
+%:
+	dh $@
+	
+override_dh_auto_build:
 	dh_testdir
 	make DATADIR=/usr/share/games/bloboats
 	docbook-to-man debian/bloboats.sgml > debian/bloboats.6
-	touch build-stamp
 
-clean: unpatch
+override_dh_clean:
 	dh_testdir
 	[ ! -f bloboats.dirs ] || make clean
 	rm -f debian/bloboats.6
 	dh_clean
 
-install: build
+override_dh_auto_install:
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
 	dh_installdirs
 	make DATADIR=/usr/share/games/bloboats DESTDIR=debian/bloboats BINARYDIR=/usr/games install
 	# xpm
@@ -42,24 +30,8 @@ install: build
 	mkdir -p debian/bloboats/usr/share/applications
 	cp debian/bloboats.desktop debian/bloboats/usr/share/applications
 
-binary-indep: build install
+override_dh_installdocs:
+	dh_installdocs readme.txt debian/README.Debian
 
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs
-	dh_installdocs INTRO.txt  readme.txt debian/README.Debian
+override_dh_installman:
 	dh_installman debian/bloboats.6
-	dh_installmenu
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
