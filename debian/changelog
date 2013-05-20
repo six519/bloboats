@@ -1,13 +1,42 @@
-bloboats (1.0.2.dfsg-1) UNRELEASED; urgency=low
+bloboats (1.0.2+dfsg-1) unstable; urgency=low
 
   * Team upload.
+
+  [ Mahyuddin Susanto ]
   * New upstream release.
   * Refreshed all patches:
-    - debian/patches/01-fix_segfault_notebook.patch 
+    - debian/patches/01-fix_segfault_notebook.patch
     - debian/patches/02-fix-Makefile.patch
     - debian/patches/03-uint32.patch
+  * Update copyright to copyright format 1.0.
+  * Simplify debian/rules by using dh sequencer.
+  * Switch to source format 3.0 (quilt).
 
- -- Mahyuddin Susanto <udienz@ubuntu.com>  Tue, 27 Mar 2012 17:10:47 +0700
+  [ Gonéri Le Bouder ]
+  * Remove myself from Uploaders.
+
+  [ Markus Koschany ]
+  * Bump compatibility level to 9 and require debhelper >=9.
+  * Bump Standards-Version to 3.9.4, no changes needed.
+  * Rename the debian package version to 1.0.2+dfsg. (Closes: #593517)
+  * The new upstream version supports higher screen resolutions, at least
+    1680x1050 pixel. (Closes: #560101)
+  * Update debian/watch and make the file extension regex more flexible.
+  * debian/rules:
+    - Build with --parallel.
+    - Drop unneeded overrides and further simplify debian/rules.
+  * debian/patches:
+    - Add DEP-3 header to 02-fix-Makefile.patch
+    - Add Hardening.patch to enable $(LDFLAGS).
+  * Convert bloboats.sgml to bloboats.6. Add missing OPTIONS.
+  * Install readme.txt via docs file and bloboats.6 with manpages file.
+  * Add new high resolution bloboats.png icon.
+  * debian/control:
+    - Drop docbook-to-man and libglib2.0-dev from Build-Depends. Both are not
+      needed.
+  * bloaboats.desktop: Add comment in German and keywords.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 20 May 2013 21:31:20 +0200
 
 bloboats (1.0.1.dsfg-3) unstable; urgency=low
 

@@ -1,3 +1,4 @@
 01-fix_segfault_notebook.patch
 02-fix-Makefile.patch
 03-uint32.patch
+Hardening.patch

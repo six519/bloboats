@@ -1,15 +1,20 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: bloboats
-Upstream-Contact:  Markus Kettunen <makegho@blobtrox.net>
+Upstream-Contact: Markus Kettunen <makegho@blobtrox.net>
 Source: http://bloboats.dy.fi/
 
 Files: *
-Copyright: 2006-2012 Markus Kettunen
+Copyright: 2006,2010, Markus Kettunen
 License: GPL-2+
 
 Files: debian/*
-Copyright: 2012, Mahyuddin Susanto <udienz@ubuntu.com>
-           2006, GonÃ©ri Le Bouder <goneri@rulezlan.org>
+Copyright: 2006-2009, Gonéri Le Bouder <goneri@rulezlan.org>
+           2007-2008, Jon Dowland
+           2008,      Ansgar Burchardt, William Lima
+           2008,      Barry deFreese <bdefreese@debian.org>
+           2009,      Paul Wise
+           2012,      Mahyuddin Susanto <udienz@ubuntu.com>
+           2013,      Markus Koschany <apo@gambaru.de>
 License: GPL-2+
 
 License: GPL-2+

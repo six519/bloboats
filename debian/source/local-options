@@ -1,2 +1,0 @@
-unapply-patches
-extend-diff-ignore = "(^|/)(compiling_settings\.h)$"

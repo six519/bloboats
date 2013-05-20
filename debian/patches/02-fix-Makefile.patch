@@ -1,7 +1,16 @@
-Index: bloboats-1.0.2.dsfg/Makefile
+From: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Date: Tue, 21 May 2013 00:12:15 +0200
+Subject: 02-fix-Makefile
+
 ===================================================================
---- bloboats-1.0.2.dsfg.orig/Makefile	2010-11-24 02:27:16.000000000 +0700
-+++ bloboats-1.0.2.dsfg/Makefile	2012-03-07 12:16:59.543928783 +0700
+---
+ Makefile |   63 +++++++++++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 38 insertions(+), 25 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index f1ecef5..539d9fd 100644
+--- a/Makefile
++++ b/Makefile
 @@ -7,17 +7,21 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -28,7 +37,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  
  PRIVATEDIR = ~/.bloboats
  
-@@ -27,7 +31,10 @@
+@@ -27,7 +31,10 @@ PRIVATEDIR = ~/.bloboats
  # SDL, SDL_image, SDL_mixer to compile. Libvorbis for music support.
  # OpenGL support.
  
@@ -40,7 +49,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  MUSIC = 1
  DEBUG = 0
  
-@@ -40,7 +47,7 @@
+@@ -40,7 +47,7 @@ DEBUG = 0
  
  
  #This should probably be DEFAULT
@@ -49,7 +58,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  
  
  ### Only some random settings below
-@@ -72,7 +79,8 @@
+@@ -72,7 +79,8 @@ SDLCONFIG_CROSS = i586-mingw32msvc-sdl-config
  SDLCONFIG = $(SDLCONFIG_$(TARGET))
  
  ### Libs
@@ -59,7 +68,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -L/usr/X11R6/lib -lGL -lGLU
  LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -L/usr/pkg/lib
  LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -framework OpenGL
-@@ -132,18 +140,22 @@
+@@ -132,18 +140,22 @@ CXXFLAGS_MACOSX_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_ = $(CXXFLAGS_$(TARGET)_)
  
@@ -86,7 +95,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  config:
  	echo "datadir $(DATADIR)" >bloboats.dirs
  	echo "privatedir $(PRIVATEDIR)" >>bloboats.dirs
-@@ -152,16 +164,16 @@
+@@ -152,16 +164,16 @@ config:
  	echo "#define SOUND $(SOUND)" >> src/compiling_settings.h
  	echo "#define MUSIC $(MUSIC)" >> src/compiling_settings.h
  	echo "#define DEBUG $(DEBUG)" >> src/compiling_settings.h
@@ -112,7 +121,7 @@ Index: bloboats-1.0.2.dsfg/Makefile
  
  uninstall:
  	rm -f $(CONFIGDIR)/bloboats.dirs
-@@ -173,10 +185,11 @@
+@@ -173,10 +185,11 @@ uninstall:
  
  gho: src/viewport.o
  	$(CXX) src/viewport.o $(LIBS) $(CXXFLAGS_)

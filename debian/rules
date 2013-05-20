@@ -1,37 +1,14 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
-export DH_VERBOSE=1
-#include /usr/share/quilt/quilt.make
-
 
 %:
-	dh $@
-	
-override_dh_auto_build:
-	dh_testdir
-	make DATADIR=/usr/share/games/bloboats
-	docbook-to-man debian/bloboats.sgml > debian/bloboats.6
+	dh $@ --parallel
 
-override_dh_clean:
-	dh_testdir
-	[ ! -f bloboats.dirs ] || make clean
-	rm -f debian/bloboats.6
-	dh_clean
+
+override_dh_auto_build:
+	make DATADIR=/usr/share/games/bloboats
 
 override_dh_auto_install:
-	dh_testdir
-	dh_testroot
-	dh_installdirs
-	make DATADIR=/usr/share/games/bloboats DESTDIR=debian/bloboats BINARYDIR=/usr/games install
-	# xpm
-	mkdir -p debian/bloboats/usr/share/pixmaps
-	cp debian/bloboats.xpm debian/bloboats/usr/share/pixmaps
-	# desktop
-	mkdir -p debian/bloboats/usr/share/applications
-	cp debian/bloboats.desktop debian/bloboats/usr/share/applications
-
-override_dh_installdocs:
-	dh_installdocs readme.txt debian/README.Debian
-
-override_dh_installman:
-	dh_installman debian/bloboats.6
+	make \
+		DATADIR=/usr/share/games/bloboats \
+		DESTDIR=debian/bloboats \
+		BINARYDIR=/usr/games install

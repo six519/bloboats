@@ -1,0 +1,3 @@
+debian/icons/bloboats.xpm       usr/share/pixmaps
+debian/icons/bloboats.png       usr/share/pixmaps
+debian/bloboats.desktop         usr/share/applications

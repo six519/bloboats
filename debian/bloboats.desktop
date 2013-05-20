@@ -1,9 +1,11 @@
 [Desktop Entry]
 Name=Bloboats
 Comment=An arcade-like boat racing game
+Comment[de]=Ein Bootrennen im Arkade-Stil
 Exec=bloboats
 Icon=bloboats
 Terminal=false
 Type=Application
 Categories=Game;ArcadeGame;
 StartupNotify=false
+Keywords=boat;race;water;arcade;jump;game;

@@ -1,6 +1,6 @@
-= Bloboats 1.0.1.dsfg-1 =
+= Bloboats 1.0.2+dsfg =
 
-Audio files had been remove from the original tarball. We did this because
+Audio files had been removed from the original tarball. We did this because
 they failed §6 DFSG.
 http://lists.alioth.debian.org/pipermail/pkg-games-devel/2006-September/001914.html
 

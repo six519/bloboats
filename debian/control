@@ -2,13 +2,14 @@ Source: bloboats
 Section: games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Barry deFreese <bddebian@comcast.net>, Mahyuddin Susanto <udienz@ubuntu.com>
-Build-Depends: debhelper (>= 8),
-               docbook-to-man,
-               libglib2.0-dev,
-               libsdl-image1.2-dev,
-               libsdl-net1.2-dev,
-Standards-Version: 3.9.3
+Uploaders:
+ Barry deFreese <bddebian@comcast.net>,
+ Mahyuddin Susanto <udienz@ubuntu.com>
+Build-Depends:
+ debhelper (>= 9),
+ libsdl-image1.2-dev,
+ libsdl-net1.2-dev
+Standards-Version: 3.9.4
 Homepage: http://bloboats.blobtrox.net/about.php
 Vcs-Git: git://anonscm.debian.org/pkg-games/bloboats.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/bloboats.git

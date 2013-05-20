@@ -1,3 +1,6 @@
-?package(bloboats):needs="X11" section="Games/Action"\
-  title="Bloboats" command="/usr/games/bloboats" \
-  icon="bloboats.xpm"
+?package(bloboats):needs="X11" \
+  section="Games/Action" \
+  title="Bloboats" \
+  longtitle="Bloboats - a boat racing game" \
+  command="/usr/games/bloboats" \
+  icon="/usr/share/pixmaps/bloboats.xpm"
