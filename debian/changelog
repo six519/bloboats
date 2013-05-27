@@ -21,6 +21,8 @@ bloboats (1.0.2+dfsg-1) unstable; urgency=low
   * Rename the debian package version to 1.0.2+dfsg. (Closes: #593517)
   * The new upstream version supports higher screen resolutions, at least
     1680x1050 pixel. (Closes: #560101)
+  * The new upstream version seemingly fixes the bug that HV-Arena finishes
+    before the player can reach the Enterprise. (Closes: #413819)
   * Update debian/watch and make the file extension regex more flexible.
   * debian/rules:
     - Build with --parallel.
