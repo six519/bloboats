@@ -1,6 +1,4 @@
 #!/usr/bin/make -f
-export CXX = g++-6
-export CXX_DEFAULT = g++-6
 
 %:
 	dh $@ --parallel
