@@ -1,13 +1,17 @@
-Description: Add fix_segfault_notebook.diff to avoid a segfault if the screen
- doesn't accept 1024x768 like most of the notebook computer
-Author: Gonéri Le Bouder <goneri@rulezlan.org>
-Bug-Debian: http://bugs.debian.org/523271
+From: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Date: Sun, 10 Jul 2016 22:12:47 +0200
+Subject: fix_segfault_notebook
 
-Index: bloboats-1.0.2.dsfg/src/main.cpp
-===================================================================
---- bloboats-1.0.2.dsfg.orig/src/main.cpp	2010-11-24 01:23:12.000000000 +0700
-+++ bloboats-1.0.2.dsfg/src/main.cpp	2012-03-06 20:05:58.595691437 +0700
-@@ -184,7 +184,7 @@
+---
+ src/main.cpp   | 2 +-
+ src/window.cpp | 4 ++++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/main.cpp b/src/main.cpp
+index 55f65bd..820a1d5 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -184,7 +184,7 @@ int main(int argc, char *argv[]) {
  
  	if (Config.fullscreen) flags |= SDL_FULLSCREEN;
  
@@ -16,11 +20,11 @@ Index: bloboats-1.0.2.dsfg/src/main.cpp
  
  	if (!manualres) {
  	    s = Window.OpenWindow(Config.reswidth, Config.resheight, 32, flags);
-Index: bloboats-1.0.2.dsfg/src/window.cpp
-===================================================================
---- bloboats-1.0.2.dsfg.orig/src/window.cpp	2010-08-26 03:07:46.000000000 +0700
-+++ bloboats-1.0.2.dsfg/src/window.cpp	2012-03-06 20:07:28.924139344 +0700
-@@ -53,6 +53,10 @@
+diff --git a/src/window.cpp b/src/window.cpp
+index 7872c9f..8570465 100644
+--- a/src/window.cpp
++++ b/src/window.cpp
+@@ -53,6 +53,10 @@ SDL_Surface * window::OpenWindow(int w, int h, int b, int flags) {
  
  
  	screen = SDL_SetVideoMode(width, height, bpp, flags);

@@ -1,12 +1,17 @@
-Description: Fix segfault at start up
-Author: Raphael Geissert <atomo64@gmail.com>
-Bug-Debian: http://bugs.debian.org/523271
+From: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Date: Sun, 10 Jul 2016 22:12:47 +0200
+Subject: uint32
 
-Index: bloboats-1.0.2.dsfg/src/window.cpp
-===================================================================
---- bloboats-1.0.2.dsfg.orig/src/window.cpp	2012-03-06 20:16:41.778880814 +0700
-+++ bloboats-1.0.2.dsfg/src/window.cpp	2012-03-06 20:18:06.671301767 +0700
-@@ -36,7 +36,7 @@
+---
+ src/window.cpp | 2 +-
+ src/window.h   | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/window.cpp b/src/window.cpp
+index 8570465..78424b6 100644
+--- a/src/window.cpp
++++ b/src/window.cpp
+@@ -36,7 +36,7 @@ window::~window(){}
  
  
  
@@ -15,11 +20,11 @@ Index: bloboats-1.0.2.dsfg/src/window.cpp
  	if (!flags) {
  		flags = oldflags^SDL_FULLSCREEN;
  	}
-Index: bloboats-1.0.2.dsfg/src/window.h
-===================================================================
---- bloboats-1.0.2.dsfg.orig/src/window.h	2006-08-03 05:05:36.000000000 +0700
-+++ bloboats-1.0.2.dsfg/src/window.h	2012-03-06 20:18:34.023437399 +0700
-@@ -31,7 +31,7 @@
+diff --git a/src/window.h b/src/window.h
+index d17cbcb..9946884 100644
+--- a/src/window.h
++++ b/src/window.h
+@@ -31,7 +31,7 @@ class window
  		window();
  		~window();
  
@@ -28,7 +33,7 @@ Index: bloboats-1.0.2.dsfg/src/window.h
  		void SetTitle(char *text, char *icon);
  		bool Iconify();
  
-@@ -52,7 +52,7 @@
+@@ -52,7 +52,7 @@ class window
  
  		int xlast, ylast;
  

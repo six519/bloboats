@@ -3,11 +3,11 @@ Date: Tue, 21 May 2013 00:29:34 +0200
 Subject: Hardening
 
 ---
- Makefile |    2 +-
+ Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index 539d9fd..579309d 100644
+index 539d9fd..879cc67 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -146,7 +146,7 @@ all: config-stamp build-stamp
