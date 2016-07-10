@@ -9,7 +9,7 @@ Build-Depends:
  libsdl-image1.2-dev,
  libsdl-net1.2-dev
 Standards-Version: 3.9.8
-Homepage: http://bloboats.blobtrox.net/about.php
+Homepage: http://bloboats.dy.fi/about.php
 Vcs-Git: https://anonscm.debian.org/git/pkg-games/bloboats.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/bloboats.git
 
