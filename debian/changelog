@@ -1,3 +1,15 @@
+bloboats (1.0.2+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Vcs-fields: Use https and cgit.
+  * Update Homepage address.
+  * debian/watch: Use version=4
+  * Add gcc-6-FTBFS.patch and fix FTBFS with GCC 6. (Closes: #811643)
+  * Add debian/clean file and ensure that bloboats can be built twice in a row.
+
+ -- Markus Koschany <apo@debian.org>  Sun, 10 Jul 2016 22:34:44 +0200
+
 bloboats (1.0.2+dfsg-1) unstable; urgency=low
 
   * Team upload.
