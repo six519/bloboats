@@ -1,0 +1,23 @@
+From: Markus Koschany <apo@debian.org>
+Date: Sun, 10 Jul 2016 22:21:30 +0200
+Subject: gcc-6 FTBFS
+
+---
+ src/menu.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/menu.cpp b/src/menu.cpp
+index afa3752..231122d 100644
+--- a/src/menu.cpp
++++ b/src/menu.cpp
+@@ -917,8 +917,8 @@ void menu::simulate(Uint32 level, char *replay) {
+ 				exit(1);
+ 			}
+ 
+-			ghostfile=false;
+-			ghost=false;
++			ghostfile=0;
++			ghost=0;
+ 		} else {
+ 			Uint32 ghostlevel = 0;
+ 			compat::FromFile_Int(ghostfile, &ghostlevel); // read level number from ghost file
