@@ -2,5 +2,4 @@
 02-fix-Makefile.patch
 03-uint32.patch
 Hardening.patch
-gcc-6.patch
 gcc-6-FTBFS.patch
