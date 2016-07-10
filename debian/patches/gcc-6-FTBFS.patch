@@ -2,6 +2,8 @@ From: Markus Koschany <apo@debian.org>
 Date: Sun, 10 Jul 2016 22:21:30 +0200
 Subject: gcc-6 FTBFS
 
+Debian-Bug: https://bugs.debian.org/811643
+Forwarded: no
 ---
  src/menu.cpp | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
