@@ -1,0 +1,33 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Subject: reverse X and X-stamp targets
+
+By having X contain the rules and X-stamp depend on X, X is always run. Thus
+the binary is relinked during make install. This is bad, because
+dh_auto_install doesn't pass cross compilers to make install.
+
+Index: bloboats-1.0.2+dfsg/Makefile
+===================================================================
+--- bloboats-1.0.2+dfsg.orig/Makefile
++++ bloboats-1.0.2+dfsg/Makefile
+@@ -143,8 +143,8 @@
+ all: config-stamp build-stamp
+ 
+ #main: $(OBJ)
+-build-stamp: build
+-build: config-stamp $(OBJ)
++build: build-stamp
++build-stamp: config-stamp $(OBJ)
+ 	mkdir -p bin
+ 	$(CXX) $(LDFLAGS) $(OBJ) $(LIBS) $(CXXFLAGS)
+ 	touch build-stamp
+@@ -155,8 +155,8 @@
+ 	$(CXX) -o bin/$(BINARY) $(OBJ) $(ICON) $(LIBS)
+ 	#$(STRIP) bin/$(BINARY)
+ 
+-config-stamp: config
+-config:
++config: config-stamp
++config-stamp:
+ 	echo "datadir $(DATADIR)" >bloboats.dirs
+ 	echo "privatedir $(PRIVATEDIR)" >>bloboats.dirs
+ 	chmod 644 bloboats.dirs
