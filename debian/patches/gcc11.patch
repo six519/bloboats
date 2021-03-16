@@ -1,0 +1,15 @@
+Description: Do not compare a pointer value to null, rather just check for inequality
+Author: Nilesh Patra <nilesh@debian.org>
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=983994
+Last-Update: 2021-03-16
+--- a/src/menu.cpp
++++ b/src/menu.cpp
+@@ -1567,7 +1567,7 @@
+ 	// Get resolutions
+ 	vector<Resolution> resolutions;
+ 	SDL_Rect** modes = SDL_ListModes(NULL, SDL_FULLSCREEN|SDL_HWSURFACE|SDL_OPENGL);
+-	if(modes > 0) {
++	if(modes != 0) {
+ 		Uint32 bpp = SDL_GetVideoInfo()->vfmt->BitsPerPixel;
+ 		for(int i=0; modes[i] && i < 10; ++i) {
+ 			Resolution resolution;

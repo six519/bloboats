@@ -4,3 +4,4 @@
 Hardening.patch
 gcc-6-FTBFS.patch
 cross.patch
+gcc11.patch
