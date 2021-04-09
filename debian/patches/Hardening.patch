@@ -1,15 +1,24 @@
-From: Markus Koschany <apo@debian.org>
-Date: Tue, 21 May 2013 00:29:34 +0200
+From: Markus Koschany <apo@debian.org>, Nilesh Patra <nilesh@debian.org>
+Date: Fri, 9 Apr 2021 17:57:43 +0530
 Subject: Hardening
 
 ---
- Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 539d9fd..879cc67 100644
+index 539d9fd..a3f0fe5 100644
 --- a/Makefile
 +++ b/Makefile
+@@ -104,7 +104,7 @@ CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
+ CXXFLAGS_MACOSX = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+ CXXFLAGS_CROSS = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+ 
+-CXXFLAGS = $(CXXFLAGS_$(TARGET))
++CXXFLAGS += $(CXXFLAGS_$(TARGET))
+ 
+ ### Stripping command
+ STRIP_DEFAULT = strip
 @@ -146,7 +146,7 @@ all: config-stamp build-stamp
  build-stamp: build
  build: config-stamp $(OBJ)
