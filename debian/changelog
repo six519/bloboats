@@ -1,12 +1,13 @@
-bloboats (1.0.2+dfsg-4) UNRELEASED; urgency=medium
+bloboats (1.0.2+dfsg-4) unstable; urgency=medium
 
   * Team Upload.
   * d/p/gcc11.patch: Fix gcc11 FTBFS (Closes: #983994)
   * Add d/salsa-ci.yml
   * d/p/hardening.patch: Do not override CXXFLAGS
     (Fixes blhc and makes build reproducible)
+  * d/control: Update VCS URLs
 
- -- Nilesh Patra <nilesh@debian.org>  Fri, 09 Apr 2021 18:03:50 +0530
+ -- Nilesh Patra <nilesh@debian.org>  Mon, 06 Sep 2021 19:28:22 +0530
 
 bloboats (1.0.2+dfsg-3) unstable; urgency=medium
 
