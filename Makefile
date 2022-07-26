@@ -54,7 +54,7 @@ ICON_CMD = i586-mingw32msvc-windres -i src/icon.rc -o $(ICON)
 
 ### C++ compiler to be used
 CXX_DEFAULT = g++
-CXX_FREEBSD = g++
+CXX_FREEBSD = clang++
 CXX_NETBSD = g++
 CXX_MACOSX = g++
 CXX_CROSS = i586-mingw32msvc-g++
