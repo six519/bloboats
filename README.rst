@@ -6,6 +6,7 @@ A Game created by Markus Kettunen and was forked from https://salsa.debian.org/g
 Building on FreeBSD 13.1
 ========================
 ::
+    
     pkg install libvorbis sdl sdl_mixer sdl_image sdl_net
     make TARGET=FREEBSD
     make install
