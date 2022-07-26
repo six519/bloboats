@@ -64,7 +64,7 @@ CXX = $(CXX_$(TARGET))
 
 ### SDL-Config in your system
 SDLCONFIG_DEFAULT = sdl-config
-SDLCONFIG_FREEBSD = sdl11-config
+SDLCONFIG_FREEBSD = sdl-config
 SDLCONFIG_NETBSD = sdl-config
 SDLCONFIG_MACOSX = sdl-config
 SDLCONFIG_CROSS = i586-mingw32msvc-sdl-config
@@ -73,7 +73,7 @@ SDLCONFIG = $(SDLCONFIG_$(TARGET))
 
 ### Libs
 LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
-LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -L/usr/X11R6/lib -lGL -lGLU
+LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
 LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -L/usr/pkg/lib
 LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -framework OpenGL
 LIBS_CROSS = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lopengl32 -lglu32
@@ -91,7 +91,7 @@ BINARY = $(BINARY_$(TARGET))
 
 ### CXX-Flags
 CXXFLAGS_DEFAULT = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
-CXXFLAGS_FREEBSD = -g `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY) -O2
+CXXFLAGS_FREEBSD = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
 CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
 CXXFLAGS_MACOSX = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
 CXXFLAGS_CROSS = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
@@ -126,7 +126,7 @@ BINARY_MACOSX_ = blobinv
 BINARY_CROSS_ = blobinv.exe
 BINARY_ = $(BINARY_$(TARGET)_)
 CXXFLAGS_DEFAULT_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
-CXXFLAGS_FREEBSD_ = -g `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY_) -O2
+CXXFLAGS_FREEBSD_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
 CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
 CXXFLAGS_MACOSX_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
 CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
