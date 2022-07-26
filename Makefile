@@ -91,7 +91,7 @@ BINARY = $(BINARY_$(TARGET))
 
 ### CXX-Flags
 CXXFLAGS_DEFAULT = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
-CXXFLAGS_FREEBSD = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+CXXFLAGS_FREEBSD = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2 -lstdc++
 CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
 CXXFLAGS_MACOSX = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
 CXXFLAGS_CROSS = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
