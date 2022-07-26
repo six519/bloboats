@@ -173,7 +173,7 @@ gho: src/viewport.o
 	$(STRIP) bin/$(BINARY_)
 
 clean:
-	rm bloboats.dirs
-	rm src/*.o
-	rm src/models/*.o
-	rm bin/$(BINARY)
+	rm -rf bloboats.dirs
+	rm -rf src/*.o
+	rm -rf src/models/*.o
+	rm -rf bin/$(BINARY)
