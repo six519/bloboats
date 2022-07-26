@@ -164,12 +164,9 @@ install:
 	chmod 755 `find $(DATADIR) -type d`
 
 uninstall:
-	rm -f $(CONFIGDIR)/bloboats.dirs
+	rm -rf $(CONFIGDIR)/bloboats.dirs
 	rm -rf $(DATADIR)/*
-	rm -f $(BINARYDIR)/bloboats
-	rmdir -p --ignore-fail-on-non-empty $(DATADIR)
-	rmdir -p --ignore-fail-on-non-empty $(CONFIGDIR)
-	rmdir -p --ignore-fail-on-non-empty $(BINARYDIR)
+	rm -rf $(BINARYDIR)/bloboats
 
 gho: src/viewport.o
 	$(CXX) src/viewport.o $(LIBS) $(CXXFLAGS_)
