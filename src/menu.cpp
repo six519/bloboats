@@ -1567,7 +1567,7 @@ void menu::resolution() {
 	// Get resolutions
 	vector<Resolution> resolutions;
 	SDL_Rect** modes = SDL_ListModes(NULL, SDL_FULLSCREEN|SDL_HWSURFACE|SDL_OPENGL);
-	if(modes > 0) {
+	if(modes > (SDL_Rect**)0) {
 		Uint32 bpp = SDL_GetVideoInfo()->vfmt->BitsPerPixel;
 		for(int i=0; modes[i] && i < 10; ++i) {
 			Resolution resolution;
