@@ -19,3 +19,10 @@ Building on Ubuntu 22.04 LTS
     apt install libsdl1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev libsdl-net1.2-dev libvorbis-dev
     make
     make install
+
+Screenshot
+==========
+
+.. image:: image1.png
+
+.. image:: image2.png
