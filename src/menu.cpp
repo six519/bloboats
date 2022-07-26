@@ -917,7 +917,7 @@ void menu::simulate(Uint32 level, char *replay) {
 				exit(1);
 			}
 
-			ghostfile=false;
+			ghostfile=NULL;
 			ghost=false;
 		} else {
 			Uint32 ghostlevel = 0;
