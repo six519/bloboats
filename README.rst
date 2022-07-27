@@ -20,6 +20,14 @@ Building on Ubuntu 22.04 LTS
     make
     make install
 
+Building on macOS
+=================
+::
+
+    brew install libvorbis sdl sdl_image sdl_mixer sdl_net
+    make TARGET=MACOSX
+    make TARGET=MACOSX install
+
 Screenshot
 ==========
 
