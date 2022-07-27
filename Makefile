@@ -13,11 +13,28 @@ PREFIX = /
 # and comment the line below. Compile and run with './bin/bloboats'
 #DATADIR = data
 
-DATADIR = $(PREFIX)usr/games/bloboats/data
+DATADIR_DEFAULT = $(PREFIX)usr/games/bloboats/data
+DATADIR_FREEBSD = $(PREFIX)usr/games/bloboats/data
+DATADIR_NETBSD = $(PREFIX)usr/games/bloboats/data
+DATADIR_MACOSX = ~/bloboats/data
+DATADIR_CROSS = $(PREFIX)usr/games/bloboats/data
 
 ### If you do make install, you may perhaps want to set these
-BINARYDIR = $(PREFIX)usr/bin
-CONFIGDIR = $(PREFIX)etc
+BINARYDIR_DEFAULT = $(PREFIX)usr/bin
+BINARYDIR_FREEBSD = $(PREFIX)usr/bin
+BINARYDIR_NETBSD = $(PREFIX)usr/bin
+BINARYDIR_MACOSX = ~/bloboats
+BINARYDIR_CROSS = $(PREFIX)usr/bin
+
+CONFIGDIR_DEFAULT = $(PREFIX)etc
+CONFIGDIR_FREEBSD = $(PREFIX)etc
+CONFIGDIR_NETBSD = $(PREFIX)etc
+CONFIGDIR_MACOSX = ~/bloboats
+CONFIGDIR_CROSS = $(PREFIX)etc
+
+DATADIR = $(DATADIR_$(TARGET))
+BINARYDIR = $(BINARYDIR_$(TARGET))
+CONFIGDIR = $(CONFIGDIR_$(TARGET))
 
 PRIVATEDIR = ~/.bloboats
 
