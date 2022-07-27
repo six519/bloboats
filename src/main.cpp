@@ -187,7 +187,11 @@ int main(int argc, char *argv[]) {
 	SDL_Surface *s;
 
 	if (!manualres) {
+#ifdef __APPLE__
+		s = Window.OpenWindow(1024, 768, 32, flags);
+#else
 	    s = Window.OpenWindow(Config.reswidth, Config.resheight, 32, flags);
+#endif
 	} else {
 		s = Window.OpenWindow(reswidth, resheight, 32, flags);
 	}
