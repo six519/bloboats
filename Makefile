@@ -74,7 +74,7 @@ CXX_DEFAULT = g++
 CXX_FREEBSD = clang++
 CXX_NETBSD = g++
 CXX_MACOSX = g++
-CXX_CROSS = i586-mingw32msvc-g++
+CXX_CROSS = i686-w64-mingw32-g++
 
 CXX = $(CXX_$(TARGET))
 
@@ -84,7 +84,7 @@ SDLCONFIG_DEFAULT = sdl-config
 SDLCONFIG_FREEBSD = sdl-config
 SDLCONFIG_NETBSD = sdl-config
 SDLCONFIG_MACOSX = sdl-config
-SDLCONFIG_CROSS = i586-mingw32msvc-sdl-config
+SDLCONFIG_CROSS = /usr/i686-w64-mingw32/sys-root/mingw/bin/sdl-config
 
 SDLCONFIG = $(SDLCONFIG_$(TARGET))
 
@@ -120,7 +120,7 @@ STRIP_DEFAULT = strip
 STRIP_FREEBSD = strip
 STRIP_NETBSD = strip
 STRIP_MACOSX = strip
-STRIP_CROSS = i586-mingw32msvc-strip
+STRIP_CROSS = i686-w64-mingw32-strip
 
 STRIP = $(STRIP_$(TARGET))
 
