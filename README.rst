@@ -24,7 +24,7 @@ Building on macOS
 =================
 ::
 
-    brew install libvorbis sdl sdl_image sdl_mixer sdl_net
+    brew install libvorbis sdl12-compat sdl_image sdl_mixer sdl_net
     make TARGET=MACOSX
     make TARGET=MACOSX install
 
