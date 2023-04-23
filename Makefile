@@ -16,20 +16,26 @@ PREFIX = /
 DATADIR_DEFAULT = $(PREFIX)usr/games/bloboats/data
 DATADIR_FREEBSD = $(PREFIX)usr/games/bloboats/data
 DATADIR_NETBSD = $(PREFIX)usr/games/bloboats/data
-DATADIR_MACOSX = ~/bloboats/data
+ifndef DATADIR_MACOSX
+	DATADIR_MACOSX = ~/bloboats/data
+endif
 DATADIR_CROSS = $(PREFIX)usr/games/bloboats/data
 
 ### If you do make install, you may perhaps want to set these
 BINARYDIR_DEFAULT = $(PREFIX)usr/bin
 BINARYDIR_FREEBSD = $(PREFIX)usr/bin
 BINARYDIR_NETBSD = $(PREFIX)usr/bin
-BINARYDIR_MACOSX = ~/bloboats
+ifndef BINARYDIR_MACOSX
+	BINARYDIR_MACOSX = ~/bloboats
+endif
 BINARYDIR_CROSS = $(PREFIX)usr/bin
 
 CONFIGDIR_DEFAULT = $(PREFIX)etc
 CONFIGDIR_FREEBSD = $(PREFIX)etc
 CONFIGDIR_NETBSD = $(PREFIX)etc
-CONFIGDIR_MACOSX = ~/bloboats
+ifndef CONFIGDIR_MACOSX
+	CONFIGDIR_MACOSX = ~/bloboats
+endif
 CONFIGDIR_CROSS = $(PREFIX)etc
 
 DATADIR = $(DATADIR_$(TARGET))
